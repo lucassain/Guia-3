@@ -39,6 +39,11 @@ public class Main {
 
                     cuenta.credito(2500);
                     System.out.println("Balance actualizado: "+cuenta.getBalance());
+
+                    cuenta.debito(1500);
+                    System.out.println("Balance actualizado: "+cuenta.getBalance());
+
+
                     break;
                 }
 

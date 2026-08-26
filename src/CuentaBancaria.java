@@ -40,4 +40,22 @@ public class CuentaBancaria {
 
         return balance;
     }
+
+    /*b. El método débito que representa una sustracción de dinero de la cuenta.
+          Este método debe devolver el balance luego de la operación.
+          Si el dinero en la cuenta no es suficiente para cubrir la
+          sustracción, se debe imprimir por pantalla un aviso sin
+           permitir dicha sustracción.*/
+
+    public int debito (int extraccion){
+
+        if (extraccion>balance){
+            System.out.println("Saldo insuficiente.");
+        }else {
+            this.balance=balance-extraccion;
+        }
+
+        return balance;
+    }
+
 }
