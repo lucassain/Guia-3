@@ -43,6 +43,9 @@ public class Main {
                     cuenta.debito(1500);
                     System.out.println("Balance actualizado: "+cuenta.getBalance());
 
+                    cuenta.debito(30000);
+
+                    cuenta.mostrarDetalles();
 
                     break;
                 }

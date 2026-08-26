@@ -58,4 +58,11 @@ public class CuentaBancaria {
         return balance;
     }
 
+    public void mostrarDetalles()
+    {
+        System.out.println("Id: "+id);
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Balance: "+balance);
+    }
+
 }
