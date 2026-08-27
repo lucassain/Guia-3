@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ItemVenta {
     private int id;
     private String descripcion;
@@ -10,6 +12,9 @@ public class ItemVenta {
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
+    }
+
+    public ItemVenta() {
     }
 
     public int getId() {
@@ -57,8 +62,45 @@ public class ItemVenta {
         System.out.println("ItemVenta: ");
         System.out.println("Id: "+id);
         System.out.println("Descripcion: "+descripcion);
-        System.out.println("Cantidas: "+cantidad);
+        System.out.println("Cantidad: "+cantidad);
         System.out.println("Precio Unitario: "+precioUnitario);
         System.out.println("Precio Total: "+precioTotal);
+    }
+
+    Scanner entrada= new Scanner(System.in);
+
+    public void cargarDatos (){
+
+        System.out.println("Ingrese su id: ");
+        this.id= entrada.nextInt();
+        entrada.nextLine();
+
+        System.out.println("Ingrese la descripcion: ");
+        this.descripcion= entrada.nextLine();
+
+        System.out.println("Ingrese la cantidad: ");
+        this.cantidad= entrada.nextInt();
+
+        System.out.println("Ingrese el precio unitario: ");
+        this.precioUnitario= entrada.nextDouble();
+
+        this.precioTotal=calcularPrecioTotal(cantidad, precioUnitario);
+    }
+
+    /*Permite al usuario ingresar una nueva cantidad y actualiza el atributo cantidad del ítem de venta.
+     */
+
+    public int actualizarCantidad (){
+        System.out.print("Ingrese la nueva cantidad: ");
+        this.cantidad=entrada.nextInt();
+
+        return cantidad;
+    }
+
+    public double actualizarPrecioUnitario (){
+        System.out.print("Ingrese el nuevo precio unitario: ");
+        this.precioUnitario=entrada.nextDouble();
+
+        return precioUnitario;
     }
 }

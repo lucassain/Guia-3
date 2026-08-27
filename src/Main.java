@@ -52,12 +52,63 @@ public class Main {
 
                 case 3: {
 
-                    ItemVenta venta= new ItemVenta(123, "galletitas",4,1000);
+                    int opcionesVenta;
+                    ItemVenta nuevoItem= new ItemVenta();
 
+                    do {
+                        System.out.println("VENTA DE ITEMS");
+                        System.out.println("Agregar ítem (1)");
+                        System.out.println("Imprimir ítem (2)");
+                        System.out.println("Ingresar nueva cantidad (3)");
+                        System.out.println("Ingresar nueve precio unitario (4)");
+                        System.out.println("Imprimir precio total (5)");
+                        System.out.println("Salir del programa (0)");
+                        System.out.print("Ingrese una opcion:");
+                        opcionesVenta= entrada.nextInt();
 
-                    System.out.println("El precio total es: "+venta.calcularPrecioTotal(venta.getCantidad(), venta.getPrecioUnitario()));
+                        switch (opcionesVenta){
+                            case 0:{
+                                System.out.println("Saliendo del programa...");
+                                break;
+                            }
 
-                    venta.mostrarVenta();
+                            case 1:{
+
+                                nuevoItem.cargarDatos();
+
+                                break;
+                            }
+
+                            case 2:{
+
+                                nuevoItem.mostrarVenta();
+
+                                break;
+                            }
+
+                            case 3:{
+
+                                nuevoItem.actualizarCantidad();
+                                System.out.println("Nueva cantidad: "+nuevoItem.getCantidad());
+
+                                break;
+                            }
+
+                            case 4:{
+                                nuevoItem.actualizarPrecioUnitario();
+                                System.out.println("Nuevo precio unitario: "+nuevoItem.getPrecioUnitario());
+                            }
+
+                            case 5:{
+                                System.out.println("Precio total: "+nuevoItem.calcularPrecioTotal(nuevoItem.getCantidad(), nuevoItem.getPrecioUnitario()));
+
+                                break;
+                            }
+                        }
+
+                    }while (opcionesVenta!=0);
+
+                    System.out.println("Programa finalizado!");
 
                     break;
                 }
