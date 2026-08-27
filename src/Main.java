@@ -50,6 +50,18 @@ public class Main {
                     break;
                 }
 
+                case 3: {
+
+                    ItemVenta venta= new ItemVenta(123, "galletitas",4,1000);
+
+
+                    System.out.println("El precio total es: "+venta.calcularPrecioTotal(venta.getCantidad(), venta.getPrecioUnitario()));
+
+                    venta.mostrarVenta();
+
+                    break;
+                }
+
             }
         }while (opcion != 0) ;
 
